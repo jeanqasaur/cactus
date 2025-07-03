@@ -5,7 +5,7 @@
     <h1>Talks</h1>
     <ul>
     {{ range .Site.Data.talks.talks }}
-      <li><a href="{{ .url }}">{{ .name }}</a>: {{ .desc }}</li>
+      <li><a href="{{ .url }}">{{ .name }}</a>, {{ .venue }} ({{ .date }})</li>
     {{ end }}
     </ul>
     </div>
@@ -15,6 +15,13 @@
     {{ range .Site.Data.talks.podcastinterviews }}
        <li><a href="{{ .url }}">{{ .name }}</a>, {{ .podcast }} ({{ .date }})</li>
     {{ end }}
+    </ul>
+
+    <h1>Podcasts I've hosted"</h1>
+    <ul>
+    {{ range .Site.Data.talks.podcasts }}
+        <li><a href="{{ .url }}">{{ .name }}</a>, {{ .desc }} ({{ .date }})</li>
+     {{ end }}
     </ul>
   </article>
 {{ end }}
