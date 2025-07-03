@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <!-- TODO: gallery -->
+      <div class="content" itemprop="articleBody">
+    <h1>Talks</h1>
+    <ul>
+    {{ range .Site.Data.talks.talks }}
+      <li><a href="{{ .url }}">{{ .name }}</a>: {{ .desc }}</li>
+    {{ end }}
+    </ul>
+    </div>
+
+    <h1>Podcast interviews</h1>
+    <ul>
+    {{ range .Site.Data.talks.podcastinterviews }}
+       <li><a href="{{ .url }}">{{ .name }}</a>, {{ .podcast }} ({{ .date }})</li>
+    {{ end }}
+    </ul>
+  </article>
+{{ end }}
